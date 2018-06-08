@@ -1,0 +1,5 @@
+
+@font-face{
+	src:url("../fonts/opensans.ttf") format("ttf"), url("../fonts/opensans.woff") format("woff"), url("../fonts/opensans.woff2") format("woff2");
+	font-family: "opensans";
+}

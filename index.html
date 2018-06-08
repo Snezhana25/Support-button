@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>support</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
-<link rel="stylesheet" href="style.css">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="fontawesome-all.min.js"></script>
-<script src="script.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style-support.css">
+   <link rel="stylesheet" href="css/fonts.css" >
 </head>
-
-<body>
-	<div class="wrapp">
-	<h1>hello</h1>
-		<div class="wrapper">
-		  <div class="card">
-		    <div class="card__content">
-		      <div class="card__front">
-		      		<p>Live <span>support</span></p>
-		      </div>
-		      <div class="card__back">
-		      	<i class="fas fa-comment-dots"></i>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		<div class="live-chat">
-		
-			<div class="header">
-				<a href="#" class="chat-close">x</a>
-				<img class="agent circle" src="http://emilcarlsson.se/assets/rachelzane.png" alt="avatar"/>
-				<h4>Rachel Zane</h4>
-			</div>
-			<div class="chat-history">
-				<h4>Live Support</h4>
-				<p>Type your message here</p>
-				<form action="#" id="bigForm1">
-					<fieldset>
-						<div class="type-nano">
-							<input type="email" class="email emailInclude" name="email" placeholder="Your email" required="required">
-						</div>
-						<textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-					</fieldset>
-					<p>Our contact manager will be answer you soon</p>
-					<div class="btn-container">
-						<input type="hidden" name="session_id" class="session_id" value="" autocomplete="off">
-                        <input type="hidden" class="affiliate_id" name="affiliate_id" value="" autocomplete="off">
-				        <button type="submit" class="btn-style btn-box">Submit</button>
-					</div>
-				</form>
-			</div> <!-- end chat-history -->
-		</div>
-	</div>
-
-
-
+<body>   
+<!-- support -->
+         <!-- must have  -->
+            <!-- <link rel="stylesheet" href="css/style-support.css"> -->
+            <!-- <link rel="stylesheet" href="css/fonts.css" > -->
+            <!-- <script src="js/fontawesome-all.min.js"></script> -->
+            <!-- <script src="js/script-support.js"></script> -->
+            <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+         <!-- must have  -->
+   <div class="wrapper-support">
+      <div class="card">
+       <div class="card__content">
+         <div class="card__front">
+               <p>Support</p>
+         </div>
+         <div class="card__back">
+            <i class="fas fa-comment-dots"></i>
+         </div>
+       </div>
+     </div>
+   </div>
+      <div class="live-chat">
+         <div class="header">
+            <a href="#" class="chat-close">
+               x
+            </a>
+            <img class="agent circle" src="img/face.jpg" alt="avatar"/>
+            <h4>Rachel Zane</h4>
+         </div>
+         <div class="chat-history">
+         <a href="#" class=" head-2-close chat-close">
+               x
+         </a>
+         <div class="head-2">
+            <img class="agent circle" src="img/face.jpg" alt="avatar"/>
+            
+         </div>
+            <h4>Support</h4>
+            <p>Type your message here</p>
+            <form action="#">
+               <fieldset>
+                  <div class="type-nano">
+                     <input type="email" class="email" id="email" name="email" placeholder="Your email" required="required" >
+                     <div id="valid"></div>
+                  </div>
+                  <div class="characters">
+                     <span><span id="remain">250</span> characters remaining</span>
+                     <p id="message"></p>
+                  </div>
+                  <textarea type="text" class="message-input" id="text" maxlength="250" minlength="5" placeholder="Type message..."></textarea>
+               </fieldset>
+               <p>Our contact manager will be answer you soon</p>
+               <div class="btn-container">
+                    <button type="submit" class="btn-style btn-box" id="btn-support">Submit</button>
+               </div>
+            </form>
+         </div> 
+      </div>
+<!-- end----support -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/fontawesome-all.min.js"></script>
+      <script src="js/script-support.js"></script>
 </body>
 </html>

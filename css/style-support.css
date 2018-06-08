@@ -1,32 +1,21 @@
+body{
+  background-color: #FD99BB;
+}
+
 *{
 	margin:0;
 	padding: 0;
 }
-html{
-  overflow-y: scroll;
-}
-body{
-	font-size: 14px;
-	font-family: sans-serif;
-	font-family: 'Lato', sans-serif;
-  position: relative;
-  background-color: #B5C6C2;
-  height: 1600px;
 
-}
-.wrapp{
-	position: relative;
-  display: inline-block;
-  text-align: center;
-  font-size: 50px;
-  width: 100%;
-  height: 100%;
+p{
+  margin:0 !important;
 }
 
 /*  style for button*/
-.wrapper {
+.wrapper-support {
+  font-family: 'opensans';
   position: fixed;
-  right: 0;
+  right: 20px;
   bottom: 0;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -41,6 +30,7 @@ body{
   perspective: 500px;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(26, 192, 243, 0.9);
+  cursor: pointer;
   animation: pulse 1.5s infinite;
   -webkit-animation: pulse 1.5s infinite;
   -moz-animation: pulse 1.5s infinite;
@@ -110,6 +100,9 @@ body{
   transform: rotate(90deg) rotateY(-180deg);
   
 }
+.head-2 img, .head-2-close{
+  display: none;
+}
 .card:hover{
   animation: none;
 }
@@ -140,79 +133,127 @@ body{
   }
 }
 
-
 /*  style for chatboard*/
 .live-chat {
-	bottom: 10px;
+  font-family: 'opensans';
 	display: none;
-	font-size: 14px;
 	right: 50px;
-	position: absolute;
+	position: fixed;
+  bottom: 30px;
   text-align: center;
   z-index: 999;
-  background: #fff;
-  width: 300px;
+  background-color: #fff;
+  width: 30%;
   font-size: 12px;
   border-radius: 5px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
   -webkit-box-shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.live-chat a{
+  text-decoration: none !important;
 }
 .live-chat .header {
-	background: #293239;
+	background-color: #293239;
 	color: #fff;
-	cursor: pointer;
 	position: relative;
 	padding: 16px 24px;
 	border-radius: 5px 5px 0 0;
+  font-size: 15px;
 }
 .live-chat form {
 	width: 100%;
-	margin:10px auto;
+	margin:20px auto;
+  color: #293239;
+}
+.chat-history .characters{
+  display: inline-block;
+  margin: 5px 5px;
+  font-size: 16px;
+}
+.chat-history .characters #message{
+  color: red;
 }
 .live-chat textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	padding: 20px 0 20px;
-  overflow-y: scroll;
-  -webkit-overflow-y: scroll;
-  -moz-overflow-y: scroll;
-  -ms-overflow-y: scroll;
-  -o-overflow-y: scroll;
 	outline: none;
-	width: 100%;
-  height: 50px;
+  padding: 10px 5px 10px;
+	width: 80%;
+  height: 80px;
   color: #000;
-  border-radius: 5px;
   background-color: transparent;
   margin-bottom: 10px;
   resize: none;
+  font-size: 17px;
 }
 textarea::placeholder, input::placeholder{
 	text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -o-center;
+  font-size: 17px;
 }
+-moz-placeholder{
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -o-center;
+  font-size: 17px;
+}
+::-webkit-input-placeholder, ::-webkit-textarea-placeholder{
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -o-center;
+  font-size: 17px;
+}
+-ms-placeholder{
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -o-center;
+  font-size: 17px;
+}
+-o-placeholder{
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -o-center;
+  font-size: 17px;
+}
+
 a{
 	text-decoration: none;
+  outline: none;
 }
 .chat-close {
-	background: #1b2126;
-	border-radius: 50%;
-	text-align: center;
 	color: #fff;
 	display: block;
 	position: absolute;
 	right: 0;
 	top: 0;
-	line-height: 28px;
-	font-size: 15px;
-	text-align: center;
-	width: 30px;
-	height: 30px;
+	font-size: 25px;
+  width: 40px;
+  font-weight: 600;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.chat-close:hover {
+   /*-webkit-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   transform: rotate(90deg);*/
+   color: #7C4DFF;
 }
 .chat-history {
 	padding: 8px 24px;
 	color: #333;
-  font-size: 14px;
+  font-size: 16px;
 }
 .chat-message {
 	margin: 16px 0;
@@ -222,9 +263,10 @@ fieldset {
 	margin: 0;
 	padding: 0;
 }
-h4{
+.chat-history h3{
 	line-height: 1.5em;
 	margin: 0;
+  font-size: 18px;
 }
 .header{
 	position: relative;
@@ -233,12 +275,12 @@ h4{
 	clear: both;
   position: absolute;
   z-index: 1;
-  top: -74px;
+  top: -57px;
   left: 0;
   right: 0;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   overflow: hidden;
   margin: 0 auto;
   padding: 0;
@@ -249,38 +291,44 @@ h4{
   z-index: 1;
   display: inline-block;
   margin-bottom: 10px;
-  width: 100%;
+  width: 80%;
   vertical-align: top;
   overflow: hidden;
   border-bottom: 1px solid #ccc;
 }
-input[type = "email"] {
+.type-nano input[type = "email"] {
 	width: 100%;
   position: relative;
   display: block;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
-  padding: 30px 0 20px 0;
+  padding: 15px 5px 20px 5px;
   background: transparent;
   color: #30292a;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: .05em;
 }
-input[type = "email"]:focus{
+.type-nano input[type = "email"]:focus{
 	outline: none;
 }
 .btn-container {
-	width: 50%;
+	width: 53%;
 	margin-top:40px;
   overflow: hidden;
   display: inline-block;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .btn-box {
-  font-size: 1vw;
+  font-size: 18px;
   padding: 20px 0 20px;
+  background-color: #607D8B;
   width: 100%;
   letter-spacing: .2em;
+  color: #fff;
   cursor: pointer;
   text-transform: uppercase;
   position: relative;
@@ -289,7 +337,7 @@ input[type = "email"]:focus{
   -moz-transform: translateZ(0);
   transform: translateZ(0);
   display: inline-block;
-  border: 1px solid #333 !important;
+  border: none;
 }
 .btn-box:after {
   content: '';
@@ -311,95 +359,167 @@ input[type = "email"]:focus{
 .btn-box:active:after {
   width: 100%;
 }
-
 .btn-box:focus{
 	outline: none;
 }
-@media screen and (max-width: 1200px) {
-  .live-chat{
-    font-size: 1.5vw;
+
+@media only screen and (max-device-width: 1440px) {
+  textarea::placeholder, input::placeholder{
+    font-size: 16px;
+  }
+  -o-placeholder{
+    font-size: 16px;
+  }
+  -moz-placeholder{
+    font-size: 16px;
+  }
+  -ms-placeholder{
+    font-size: 16px;
+  }
+  ::-webkit-input-placeholder, ::-webkit-textarea-placeholder{
+    font-size: 16px;
+  }
+  input[type = "email"], .live-chat textarea{
+    font-size: 16px;
   }
 }
-@media screen and (max-width: 1366px) {
-  .live-chat{
-    width: 400px;
-  }
-}
-@media screen and (max-width: 800px) {
+
+@media only screen and (max-device-width: 1024px) and (min-device-width: 800px) {
   .live-chat{
     width: 80%;
-    font-size: 16px;
-    right: 0;
+    margin:0 auto;
     left: 0;
-    margin: 0 auto;
-
+    right: 0;
   }
-  textarea::placeholder, input::placeholder{
-    font-size: 1.5vw;
+
+  -o-placeholder{
+    text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    text-align: -o-center;
+    font-size: 18px;
+  }
+}
+@media only screen and (max-device-width: 854px){
+  .btn-container{
+    margin-top: 0;
+  }
+  .live-chat .header{
+    display: none;
+  }
+  .type-nano{
+    margin-bottom:0;
+  }
+  .type-nano input[type = "email"]{
+    padding: 15px 5px 5px 5px;
+  }
+  
+  .live-chat form{
+    margin:0;
   }
   .btn-box{
-    font-size: 2vw;
+    padding:15px 0 15px;
   }
-  .card__front p{
-    font-size: 16px;
+  .chat-history{
+    background: #fff;
+    padding: 0 10px;
+    font-size: 13px;
   }
-  .chat-close{
-    line-height: 40px;
-    font-size: 25px;
+  .live-chat{
+    bottom: 0 !important;
+    width: 80%;
+    margin:0 auto;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  .live-chat form{
+    margin: 5px auto;
+  }
+  .head-2 img{
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    border: 2px solid #607D8B;
+  }
+  .head-2-close{
+    display: block;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    font-size: 20px;
+    background-color: #ccc;
+    display: block;
+    float: right;
+    color: #fff;
+  }
+  .head-2 {
+    display: block;
+    position: relative;
+  }
+}
+@media only screen and (max-device-width :736px) {
+  .wrapper-support{
+    left: 0 !important;
+    transform: translate(5%, -50%);
+    position: fixed;
+    z-index: 999;
+  }
+  .card__content, .card__front, .card__back, .card {
     width: 50px;
     height: 50px;
   }
-
-}
-@media screen and (max-width: 768px) {
-  textarea::placeholder, input::placeholder{
-    font-size: 2vw;
+  .card__front p{
+    font-size: 10px;
+    font-weight: normal;
   }
-}
-@media screen and (max-width: 640px) {
-  input[type = "email"]{
-    padding: 10px 0 10px 0;
+  .svg-inline--fa.fa-w-16 {
+    width: 0.8em;
   }
-  .live-chat textarea{
-    font-size: 14px;
-    height: 50px;
+  .svg-inline--fa{
+    vertical-align: 0.33em;
   }
-  .live-chat .header{
-    padding: 26px 34px;
+  div #valid, .chat-history .characters{
+    font-size: 13px;
   }
-}
-@media screen and (max-width: 600px) {
-  .live-chat .header img,h4{
-    display: block;
+  .btn-container{
+    margin-top: 5px;
   }
-}
-
-@media screen and (max-width: 412px) {
-  .btn-box, .card__front p, .live-chat{
-    font-size: 3vw;
-  }
-  textarea::placeholder, input::placeholder{
-    font-size: 3vw;
-  }
-}
-@media screen and (max-width: 360px) {
   .live-chat{
+    bottom: 0 !important;
+    width: 80%;
+    margin:0 auto;
+    left: 0;
     right: 0;
-    width: auto;
   }
-  .card__front p, .btn-box{
-    font-size: 3vw;
+  .live-chat form{
+    margin: 5px auto;
   }
-  .live-chat .header img, h4{
-    display: block;
-  }
-  textarea::placeholder, input::placeholder{
-    font-size: 3.5vw;
-  }
-}
-@media screen and (max-device-width: 968px) and (orientation: landscape){
-  .live-chat{
-    bottom: 0;
 
+}
+@media only screen 
+and (max-device-width :600px) {
+  .live-chat{
+    bottom: 0 !important;
+    width: 80%;
+    margin:0 auto;
+    left: 0;
+    right: 0;
   }
 }
+@media only screen  and (max-device-width: 414px) {
+  .live-chat{
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+  }
+}
+
